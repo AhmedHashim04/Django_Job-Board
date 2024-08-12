@@ -1,0 +1,17 @@
+{% extends "base_account.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  
+  <h1>Edit Info </h1>
+
+  <form method="post" >
+    {% csrf_token %}
+    {% bootstrap_form user_edit %}
+    {% bootstrap_form profile_edit %}
+    <input type="submit" value="Edit" class="boxed-btn3 w-100" >
+  </form>
+
+  {# Assumes you set up the password_reset view in your URLconf #}
+
+{% endblock content %}

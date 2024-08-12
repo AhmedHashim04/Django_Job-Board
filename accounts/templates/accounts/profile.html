@@ -1,0 +1,28 @@
+{% extends "base_account.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  
+  <h1>Account,s Info </h1>
+
+  <form method="post" >
+    {% csrf_token %}
+    <form method="post" >
+        {% csrf_token %}
+        ☼  {{profile.image}}
+        {{profile}}
+        <hr>
+        ☼ Email : {{profile.user.email}}
+        <hr>
+        ☼ Phone : {{profile.tel}}
+        <hr>
+        ☼ Country : {{profile.city}}
+        <hr>
+      </form>
+    </form>
+    
+    <div>
+      <p><a class="boxed-btn3 w-100" href="{% url 'sign_up:profile_edit'%}" >►Edit Profile?</a></p>
+    </div>
+
+{% endblock content %}

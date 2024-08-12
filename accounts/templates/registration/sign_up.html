@@ -1,0 +1,14 @@
+{% extends "base_account.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  
+  <h1>Register a new Account </h1>
+  <form method="post" >
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="sign_up" class="boxed-btn3 w-100" >
+  </form>
+  {# Assumes you set up the password_reset view in your URLconf #}
+  <p><a href="{% url 'login' %}">Have Account?</a></p>
+{% endblock content %}
